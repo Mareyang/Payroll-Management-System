@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Payroll-Management-System/Payroll-Management-System.csproj" />
+  <Project Path="PayrollManagementAppServices/PayrollManagementAppServices.csproj" />
+  <Project Path="PayrollManagementDataServices/PayrollManagementDataServices.csproj" />
+  <Project Path="PayrollManagementModels/PayrollManagementModels.csproj" />
+</Solution>
