@@ -1,10 +1,17 @@
-﻿using PayrollManagementDataServices;
+﻿using ATMService;
+using PayrollManagementDataServices;
 using PayrollManagementModels;
 
 namespace PayrollManagementAppServices
 {
     public class PayrollServices
     {
+        private readonly EmailService emailService;
+
+        public PayrollServices(EmailService emailService)
+        {
+            this.emailService = emailService;
+        } 
         //EmpJSONData employeeJson = new EmpJSONData();
         PayrollDataService payrolldataservice = new PayrollDataService(new PayrollDBData());
 
@@ -24,6 +31,8 @@ namespace PayrollManagementAppServices
         {
             payrolldataservice.Add(emp);
             //employeeJson.Add(emp);
+            String recipientEmail = "abc@company.com";
+            emailService.SendEmail(emp.Name, recipientEmail);
         }
 
         public List<Employee> GetEmployees()

@@ -1,13 +1,23 @@
-﻿using PayrollManagementAppServices;
+﻿using ATMService;
+using Microsoft.Extensions.Configuration;
+using PayrollManagementAppServices;
 using PayrollManagementModels;
 
 namespace Payroll_Management_System
 {
     internal class Program
     {
-        static PayrollServices payrollService = new PayrollServices();
+        static PayrollServices payrollService;
         static void Main(string[] args)
         {
+            IConfiguration configuration = new ConfigurationBuilder()
+           .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+           .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+           .Build();
+
+            EmailService emailService = new EmailService(configuration);
+            payrollService = new PayrollServices(emailService);
+
             while (true)
             {
                 Console.WriteLine("------ PAYROLL MANAGEMENT SYSTEM ------");

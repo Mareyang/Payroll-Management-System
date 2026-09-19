@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="../Payroll-Management-API/Payroll-Management-API/Payroll-Management-API.csproj" />
   <Project Path="Payroll-Management-System/Payroll-Management-System.csproj" />
   <Project Path="PayrollManagementAppServices/PayrollManagementAppServices.csproj" />
   <Project Path="PayrollManagementDataServices/PayrollManagementDataServices.csproj" />
